@@ -11,3 +11,7 @@ This tool reads all existing items from your Unturned installation and helps you
 Direct Download link: <a href="https://github.com/Jannled/UnturnedIDs/raw/master/UnturnedIDs.jar">UnturnedIDs.jar</a>
 
 Homepage: <a href="http://mdi.noip.me/projects/UnturnedIDs/">This projects homepage</a>
+
+<p style="float:right; width: 30%; margin-right: 0%; margin-top: 0%;">
+	<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+</p>
