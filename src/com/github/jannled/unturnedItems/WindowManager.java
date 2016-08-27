@@ -1,16 +1,20 @@
 package com.github.jannled.unturnedItems;
 
 import java.awt.BorderLayout;
+import java.awt.Desktop;
 import java.awt.Dimension;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.File;
+import java.io.IOException;
+import java.net.URISyntaxException;
 import java.util.Vector;
 
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
+import javax.swing.JEditorPane;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
@@ -19,8 +23,9 @@ import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import javax.swing.JSplitPane;
 import javax.swing.JTabbedPane;
-import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.event.HyperlinkEvent;
+import javax.swing.event.HyperlinkListener;
 
 import com.github.jannled.lib.FileUtils;
 import com.github.jannled.lib.Print;
@@ -89,10 +94,28 @@ public class WindowManager
 		tabbedPane.addTab("Welcome", null, greeter, null);
 		greeter.setLayout(new BoxLayout(greeter, BoxLayout.X_AXIS));
 		
-		JTextArea textArea = new JTextArea("This is a free tool to look up items and more for the game Unturned by Nelson Sexton. Im not afiliated with the developer of this game in any way.");
-		textArea.setEditable(false);
-		textArea.setLineWrap(true);
-		greeter.add(textArea);
+		String html = "<body style=\"background-color:#F0F0F0\">This is a free tool to look up items and more for the game Unturned by Nelson Sexton. Im not afiliated with the developer of this game in any way. <hr> <a href=\"http://smartlydressedgames.com/#unturned\">Unturned Homepage</a> <br> <a href=\"http://mdi.noip.me/projects/UnturnedIDs/\">Jannleds Homepage</a></body>";
+		JEditorPane greeterText = new JEditorPane("text/html", html);
+		greeterText.setEditable(false);
+		greeterText.addHyperlinkListener(new HyperlinkListener() {
+		    public void hyperlinkUpdate(HyperlinkEvent e) {
+		        if(e.getEventType() == HyperlinkEvent.EventType.ACTIVATED) {
+		        	if(Desktop.isDesktopSupported()) {
+		        	    try
+						{
+							Desktop.getDesktop().browse(e.getURL().toURI());
+						} catch (IOException e1)
+						{
+							e1.printStackTrace();
+						} catch (URISyntaxException e1)
+						{
+							e1.printStackTrace();
+						}
+		        	}
+		        }
+		    }
+		});
+		greeter.add(greeterText);
 		
 		JPanel createLoadout = new JPanel();
 		tabbedPane.addTab("Create Loadout", null, createLoadout, null);
