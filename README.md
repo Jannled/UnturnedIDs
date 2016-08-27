@@ -8,4 +8,6 @@ This tool reads all existing items from your Unturned installation and helps you
 	<tr> <td><a href="https://store.steampowered.com/app/304930/">Unturned</a></td> </tr>
 </table>
 
-Download link: <a href="https://github.com/Jannled/UnturnedIDs/raw/master/UnturnedIDs.jar">UnturnedIDs.jar</a>
+Direct Download link: <a href="https://github.com/Jannled/UnturnedIDs/raw/master/UnturnedIDs.jar">UnturnedIDs.jar</a>
+
+Homepage: <a href="http://mdi.noip.me/projects/UnturnedIDs/">This projects homepage</a>
